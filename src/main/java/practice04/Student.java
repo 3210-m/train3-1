@@ -1,4 +1,24 @@
 package practice04;
 
-public class Student {
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class Student extends Person {
+    private int klass;
+
+
+    public Student(String name, int age) {
+        super(name, age);
+    }
+
+    public Student(String name, int age, int klass) {
+        super(name, age);
+        this.klass = klass;
+    }
+
+    public String introduce(){
+        return super.basicIntroduce()+"I am a Student. I am at Class "+this.klass+".";
+    }
 }
